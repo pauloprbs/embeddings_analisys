@@ -1,7 +1,7 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
-from src.preprocess import data_prep
+from src.data_prep import data_prep
 from src.visualization import visualization
 from src.knn_classifier import knn_classifier
 from src.evaluation import plot_roc_auc, gerar_tabelas
@@ -10,6 +10,8 @@ from src.evaluation import plot_roc_auc, gerar_tabelas
 data = pd.read_pickle("data/mini_gm_public_v0.1.p")
 
 df = data_prep(data)
+
+print(df.head())
 
 # Estatísticas básicas dos dados
 print("Quantidade total de amostras: ", df["image_id"].nunique())
