@@ -52,6 +52,10 @@ Estes vetores de embeddings serão usados para classificar as syndrome_id's.
 
     ![Visualização t-SNE](plots/tsne_plot.png)
 
+    - Em duas dimensões, algumas síndromes, principalmente as representadas em verde mais claro, se agrupam em regiões mais específicas do gráfico, indicando que mesmo em com os embeddings representados de forma simplificada, é possível diferenciar bem estas síndromes das demais. No entanto, nas fronteiras dos grupos destas síndromes também há incidência de amostras de outras síndromes.
+
+    - As demais síndromes estão mais dispersas. É possível encontrar agrupamentos menores de suas amostras em regiões específicas dos gráficos, mas as amostras não se limitam às proximidades, indicando que um algoritmo de classificação utilizando os dados com dimensionalidade reduzida não será tão eficiente para classificar estas síndromes.
+
 
 # Referências Bibliográficas
 

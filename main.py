@@ -61,6 +61,6 @@ for metric, (knn, k, acc, f1) in best_results.items():
 
 # AUC
 for metric, (knn, k, acc, f1) in best_results.items():
-    plot_roc_auc(knn, X_test, y_test, title=f"metric")
+    plot_roc_auc(knn, X_test, y_test, title=metric)
 
 gerar_tabelas(X_train, y_train, X_test, y_test, best_results)
