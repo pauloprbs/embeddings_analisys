@@ -4,10 +4,6 @@ import matplotlib.pyplot as plt
 
 from sklearn.metrics import roc_curve, auc
 from sklearn.preprocessing import label_binarize
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, f1_score
-
-from src.knn_classifier import knn_classifier
 
 
 def plot_roc_auc(knn, X_test, y_test, title="ROC Curve"):

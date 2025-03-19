@@ -61,21 +61,41 @@ Estes vetores de embeddings serão usados para classificar as syndrome_id's.
 
 3. Classificação com KNN
 
-    - O KNN (K-Nearest Neighbors) calcula a distância entre as amostras que deseja classificar e amostras próximas de um conjunto de treinamento fornecido ao algoritmo. Entre as amostras mais próximas, quando um número k (pode ser definido pelo usuário ou encontrado através de testes) de amostras de uma determinada classe está entre os vizinhos mais próximos deste novo ponto, a amostra é classificada como pertencente a esta classe.
+- O KNN (K-Nearest Neighbors) calcula a distância entre as amostras que deseja classificar e amostras próximas de um conjunto de treinamento fornecido ao algoritmo. Entre as amostras mais próximas, quando um número k (pode ser definido pelo usuário ou encontrado através de testes) de amostras de uma determinada classe está entre os vizinhos mais próximos deste novo ponto, a amostra é classificada como pertencente a esta classe.
 
-    - Nos teste realizados, foram utilizadas as métricas de distância euclidiana e coseno.
+- Nos teste realizados, foram utilizadas as métricas de distância euclidiana e coseno.
 
-    - Para a distância euclidiana, o melhor valor K para a classificação foi 11, alcançando a acurácia de 75.89%, F1-Score = 0.754365 e AUC de 0.949369.
+- Para a distância euclidiana, o melhor valor K para a classificação foi 11, alcançando a acurácia de 75.89%, F1-Score = 0.754365 e AUC de 0.949369.
 
-    - Para a distância coseno, K = 15 se mostrou superior, com acurácia de 79.02%, F1-Score de 0.783229 e AUC = 0.953145.
+- Para a distância coseno, K = 15 se mostrou superior, com acurácia de 79.02%, F1-Score de 0.783229 e AUC = 0.953145.
+
+- Mais informações sobre as métricas estão disponíveis em [3] e [4].
 
 4. Métricas e Validação
 
-- Abaixo, as curvas ROC são apresentadas.
+- Abaixo, as curvas ROC AUC são apresentadas.
 
-![ROC Curve Euclidean](plots/euclidean.png)
+![ROC Curve - Euclidean](plots/euclidean.png)
 
-![ROC Curve Cosine](plots/cosine.png)
+- Para o KNN utilizando distância euclidiana, os valores mais baixos de AUC são de 0.92, em 4 classes que podem ser conferidas na imagem.
+
+- A melhor AUC obtida é a da classe 6, de 0.99. 
+
+![ROC Curve - Cosine](plots/cosine.png)
+
+- Para o KNN com a distância de cosenos, o menor desempenho é da classe 9, em que o AUC é igual a 0.92.
+
+- Tivemos 4 classes com AUC = 0.99, conforme o gráfico.
+
+5. Conclusões
+
+- Este estudo visou classificar sindromes genéticas através de embeddings obtidos de imagens por meio de um modelo de aprendizado de máquina. Os dados obtidos foram formatados e analisados e classificados.
+
+- Para analisar a dispersão das amostras, utilizamos o algoritmo t-SNE para redução de dimensionalidade de 320 para 2. O gráfico de dispersão gerado mostrou o agrupamento de cada classe, sendo alguns dos clusters mais bem delimitados, e outros um pouco mais dispersos.
+
+- Para a classificação, modelamos o problema utilizando KNN e testando com as distâncias euclidianas e coseno. Nos testes realizados, a utilização de coseno foi mais efetiva, obtendo acurácia de 79.02%.
+
+- Para melhorar os resultados, podemos tentar obter mais dados para treinamento, já que certas classes possuem muito mais amostras que outras. Também é possível testar outros classificadores, como redes neurais perceptron multicamadas.
 
 # Referências Bibliográficas
 
@@ -85,3 +105,8 @@ https://lvdmaaten.github.io/tsne/
 [2] gráficos t-SNE
 https://www.ibm.com/docs/pt-br/spss-modeler/18.5.0?topic=types-t-sne-charts
 
+[3] Precisão, Recall e F1 Score Em Machine Learning
+https://mariofilho.com/precisao-recall-e-f1-score-em-machine-learning/
+
+[4] Entenda o que é AUC e ROC nos modelos de Machine Learning
+https://medium.com/bio-data-blog/entenda-o-que-%C3%A9-auc-e-roc-nos-modelos-de-machine-learning-8191fb4df772
