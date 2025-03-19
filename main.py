@@ -1,8 +1,5 @@
 import pandas as pd
-import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score, f1_score
+from sklearn.model_selection import train_test_split
 
 from src.preprocess import data_prep
 from src.visualization import visualization
@@ -25,20 +22,20 @@ print("Quantidade de imagens por síndrome:")
 print(df["syndrome_id"].value_counts())
 print()
 
+# Visualização t-SNE dos embeddings
 visualization(df)
 
 # Separação dos embeddings e rótulos
 X = df.iloc[:, 3:].values  # Embeddings
 y = df["syndrome_id"].values  # Rótulos
 
-# Separando os dados
+# Divisão dos dados em train e test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 # Teste para as métricas Euclidean e Cosine
-metrics = ["euclidean", "cosine"]
 best_results = {}
 
-for metric in metrics:
+for metric in ["euclidean", "cosine"]:
     best_k = 1
     best_score = 0
     best_f1 = 0

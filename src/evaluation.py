@@ -30,6 +30,7 @@ def plot_roc_auc(knn, X_test, y_test, title="ROC Curve"):
     plt.ylabel("Taxa de True Positives")
     plt.title(title)
     plt.legend()
+    plt.savefig(f"plots/{title}", dpi=300, bbox_inches="tight")
     plt.show()
 
 def gerar_tabelas(X_train, y_train, X_test, y_test, best_results):
