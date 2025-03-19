@@ -46,14 +46,11 @@ Estes vetores de embeddings serão usados para classificar as syndrome_id's.
         - A distribuição das amostras varia bastante, entre 64 a 210 amostras. Uma baixa quantidade de amostras para o treinamento pode resultar em um modelo não tão bom para generalizar as amostras de teste e não classificar tão bem para as síndromes de baixa amostragem.
 
 2. Visualizaçao dos Dados:
-
     - Nossa visão se limita a 3 dimensões, ou seja, não temos capacidade de interpretar de forma gráfica um vetor de 320 posições. Mas para estes casos, podemos tentar simplificar os dados através de técnicas de redução de dimensionalidade, como PCA ou t-SNE (como usaremos aqui), e assim conseguir interpretar de forma visual a distribuição dos dados.
-
     - O t-SNE (t-distributed Stochastic Neighbor Embedding) [1] é um algoritmo que permite a visualização de dados multidimensionais. Os gráficos t-SNE modelam cada objeto de alta dimensionalidade em um ponto de duas ou três dimensões de mod que objetos semelhantes são modelados por pontos próximos [2].
-    
     - O gráfico de dispersão a seguir mostra a modelagem t-SNE dos embeddings em duas dimensões.
 
-    ![Visualização t-SNE](plots/Visualização t-SNE dos Embeddings.png)
+    ![Visualização t-SNE](plots/tsne_plot.png)
 
 
 # Referências Bibliográficas

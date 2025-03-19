@@ -18,5 +18,5 @@ def visualization(df):
     sns.scatterplot(x="tsne_1", y="tsne_2", hue="syndrome_id", palette="viridis", data=df_tsne, alpha=0.7)
     plt.title("Visualização t-SNE dos Embeddings")
     plt.legend(title="Síndrome ID", bbox_to_anchor=(1, 1))
-    plt.savefig("plots/Visualização t-SNE dos Embeddings.png", dpi=300, bbox_inches="tight")
+    plt.savefig("plots/tsne_plot.png", dpi=300, bbox_inches="tight")
     plt.show()
