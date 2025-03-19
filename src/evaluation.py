@@ -33,7 +33,7 @@ def plot_roc_auc(knn, X_test, y_test, title="ROC Curve"):
     plt.savefig(f"plots/{title}", dpi=300, bbox_inches="tight")
     plt.show()
 
-def gerar_tabelas(X_train, y_train, X_test, y_test, best_results):
+def gerar_tabelas(X_test, y_test, best_results):
     metrics_results = []
 
     for metric, ( knn, k, acc, f1) in best_results.items():

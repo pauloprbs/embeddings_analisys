@@ -48,7 +48,7 @@ for metric in ["euclidean", "cosine"]:
 
         if acc > best_score:
             best_score = acc
-            best_f1
+            best_f1 = f1
             best_k = k
 
     best_results[metric] = (knn, best_k, best_score, best_f1)
@@ -63,4 +63,4 @@ for metric, (knn, k, acc, f1) in best_results.items():
 for metric, (knn, k, acc, f1) in best_results.items():
     plot_roc_auc(knn, X_test, y_test, title=metric)
 
-gerar_tabelas(X_train, y_train, X_test, y_test, best_results)
+gerar_tabelas(X_test, y_test, best_results)
